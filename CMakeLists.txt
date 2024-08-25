@@ -61,13 +61,14 @@ if(NOT SKBUILD)
 endif()
 
 # ==============================================================================#
-ENABLE_TESTING()
+enable_testing()
 
 # Copy the test scripts and test configuration files to the build directory:
 file(COPY ${CMAKE_SOURCE_DIR}/tests DESTINATION ${PROJECT_BINARY_DIR})
 
 # Add the scripts to ctest
-FILE(GLOB test_scripts "${PROJECT_BINARY_DIR}/tests/*.py")
+file(GLOB test_scripts "${PROJECT_BINARY_DIR}/tests/*.py")
+file(GLOB test_scripts "${PROJECT_BINARY_DIR}/mtca4u_/tests/*.py")
 
 foreach(script_path ${test_scripts})
   get_filename_component(test_name ${script_path} NAME_WE)

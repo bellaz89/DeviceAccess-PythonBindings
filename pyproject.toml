@@ -1,8 +1,8 @@
 [build-system]
 requires = [
   "scikit-build-core",
-  "oldest-supported-numpy; python_version<='3.9'",
-  "numpy>=2.0; python_version>'3.9'",
+  "oldest-supported-numpy; python_version<='3.9.0'",
+  "numpy>=2.0; python_version>'3.9.0'",
   "cmake"
 ]
 
@@ -63,7 +63,7 @@ manylinux-aarch64-image = "manylinux2_2_28"
 build-verbosity = 1
 
 ## Run pytest to ensure that the package was correctly built
-test-skip = "*"
+test-command = "python -m unittest discover tests"
 
 [tool.cibuildwheel.linux.environment]
 # Enable backends compilation
